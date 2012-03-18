@@ -3,14 +3,24 @@
 Bootlex is a theme for the [pelican](https://github.com/ametaireau/pelican) static blog generator.
 It is based on a modified bootstrap and works nicely with a lot of pelican features.
 
+# Requirements
+
+At some points I switched to the git version, so this theme might work with the stable version, but I recommend to use the latest version from git.
+
 # Installation
 
 Just pull the repo with `git clone git://github.com/alexex/bootlex.git` and include its location via the `THEME` option in your settings.py
 
-There are some required settings you will need though:
+There are some settings that will make it work flawlessly:
 
-1. Your `SITEURL`must have a **trailing slash**
-2. You need to enable `CLEAN_URLS`
+Your `SITEURL`must have a **trailing slash**. I would recommend the following url config, that I am using with my theme, and seems to work quite good:
+
+	ARTICLE_URL = ('{slug}/')
+	ARTICLE_SAVE_AS = ('{slug}.html')
+	PAGE_URL = ('{slug}/')
+	PAGE_SAVE_AS = ('{slug}.html')
+	AUTHOR_URL = ('author/{name}/')
+	TAG_URL = ('tag/{name}/')
 
 You will probably need some RewriteRules for your Webserver aswell, my `.htaccess` looks like this:
 
