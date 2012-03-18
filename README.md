@@ -14,7 +14,6 @@ There are some required settings you will need though:
 
 You will probably need some RewriteRules for your Webserver aswell, my `.htaccess` looks like this:
 
-	::apache
 	RewriteEngine On
 	
 	RewriteBase /
@@ -26,11 +25,11 @@ You will probably need some RewriteRules for your Webserver aswell, my `.htacces
 
 You can make use of the following settings:
 
-* Pages (will be included in the menu automatically)
-* MENUITEMS (will be included aswell)
-* LINKS (as the above)
-* Analytics (will be included automatically, if set)
+* `Pages` (will be included in the menu automatically)
+* `MENUITEMS` (will be included aswell)
+* `LINKS` (as the above)
+* `GOOGLE_ANALYTICS` (will be included automatically, if set)
 
 # Missing
 
-I do not know whether it works, but as I never cared about it, I suppose that Categorys will not work properly
+I do not know whether it works, but as I never cared about it, I suppose that categorys will not work properly
