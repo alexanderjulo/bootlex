@@ -32,20 +32,28 @@
 </ul><!-- /#posts-list -->
 <div class="pagination pagination-centered">
     <ul>
-    {% if articles_page.has_previous() %}
-        <li><a href="{{ SITEURL }}{% if articles_page.previous_page_number() != 1 %}{{ page_name }}{{ articles_page.previous_page_number() }}/{% endif %}">←</a></li>
-    {% endif %}
     {% if articles_page.has_previous() and (articles_page.previous_page_number() != 1) %}
         <li><a href="{{ SITEURL }}">1</a></li>
+    {% endif %}
+    {% if articles_page.previous_page_number() - 1 == 2 %}
+        <li><a href="{{ articles_page.previous_page_number() - 1}}">{{ articles_page.previous_page_number() - 1}}</a></li>
+    {% elif articles_page.previous_page_number() - 1 > 1 %}
         <li class="disabled"><a href="#">...</a></li>
+    {% endif %}
+    {% if articles_page.has_previous() %}
+        <li><a href="{{ SITEURL }}{% if articles_page.previous_page_number() != 1 %}{{ page_name }}{{ articles_page.previous_page_number() }}/{% endif %}">{{ articles_page.previous_page_number() }}</a></li>
     {% endif %}
         <li class="active"><a href="#">{{ articles_page.number }}</a></li>
     {% if articles_page.has_next() %}
-        <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_page.next_page_number() }}/">→</a></li>
+        <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_page.next_page_number() }}/">{{ articles_page.next_page_number() }}</a></li>
+    {% endif %}
+    {% if articles_paginator.num_pages - articles_page.next_page_number() == 2 %}
+        <li><a href="{{ articles_page.next_page_number() + 1}}">{{ articles_page.next_page_number() + 1}}</a></li>
+    {% elif articles_paginator.num_pages - articles_page.next_page_number() > 2 %}
+        <li class="disabled"><a href="#">...</a></li>
     {% endif %}
     {% if articles_page.has_next() and (articles_page.next_page_number() != articles_paginator.num_pages) %}
-        <li class="disabled"><a href="#">...</a></li>
-        <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_page.num_pages }}/">{{ articles_paginator.num_pages }}</a></li>
+        <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_paginator.num_pages }}/">{{ articles_paginator.num_pages }}</a></li>
     {% endif %}
     </ul>
 </div>
