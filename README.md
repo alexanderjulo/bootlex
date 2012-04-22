@@ -13,7 +13,7 @@ Just pull the repo with `git clone git://github.com/alexex/bootlex.git` and incl
 
 There are some settings that will make it work flawlessly:
 
-Your `SITEURL`must have a **trailing slash**. I would recommend the following url config, that I am using with my theme, and seems to work quite good:
+Your `SITEURL`must have a **trailing slash**. You will also definetely need `RELATIVE_URLS = False` for the theme to properly work. I would recommend the following url config, that I am using with my theme, and seems to work quite good:
 
 	ARTICLE_URL = ('{slug}/')
 	ARTICLE_SAVE_AS = ('{slug}.html')
