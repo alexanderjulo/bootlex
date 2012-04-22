@@ -53,7 +53,7 @@
         <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_page.next_page_number() }}/">{{ articles_page.next_page_number() }}</a></li>
     {% endif %}
     {% if articles_paginator.num_pages - articles_page.next_page_number() == 2 %}
-        <li><a href="{{ articles_page.next_page_number() + 1}}">{{ articles_page.next_page_number() + 1}}</a></li>
+        <li><a href="{{ SITEURL }}{{ page_name }}{{ articles_page.next_page_number() + 1}}/">{{ articles_page.next_page_number() + 1}}</a></li>
     {% elif articles_paginator.num_pages - articles_page.next_page_number() > 2 %}
         <li class="disabled"><a href="#">...</a></li>
     {% endif %}
